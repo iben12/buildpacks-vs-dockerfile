@@ -1,0 +1,15 @@
+FROM node:18
+
+WORKDIR /app
+
+RUN chown -R node:node /app
+
+COPY nodejs/package*.json ./
+
+RUN npm i
+
+COPY nodejs .
+
+USER node
+
+CMD ["node", "main.js"]
