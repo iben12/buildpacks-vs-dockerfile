@@ -11,9 +11,9 @@ import (
 )
 
 func handler(w http.ResponseWriter, r *http.Request) {
-	fmt.Println("Request received.")
+	fmt.Printf("New %s request on path \"%s\" at %s\n", r.Method, r.URL, time.Now())
 	io.WriteString(w, "Hello, Docker Meetup!\n")
-	fmt.Println("Request served.")
+	fmt.Printf("%s request on path \"%s\" served at %s\n", r.Method, r.URL, time.Now())
 }
 
 // Route declaration
